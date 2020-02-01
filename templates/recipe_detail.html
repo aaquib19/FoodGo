@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ object.title }}
+<hr>
+{{ object.description }}
+{% if object.image %}
+<img src="{{ object.image.url }}" alt="" width="350px">
+{% endif %}
+{{ object.image }}
+</body>
+</html>
