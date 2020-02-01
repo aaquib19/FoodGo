@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-from auth.views import home
+from account.views import home
 
 urlpatterns = [
 
@@ -24,6 +24,6 @@ urlpatterns = [
     path('', home),
 
     #apps urls
-    path('accounts/', include('auth.urls')),
+    path('accounts/', include('account.urls')),
 
 ]

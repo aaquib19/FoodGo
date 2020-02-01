@@ -9,6 +9,17 @@
 </head>
 
 <body>
+{{ user.email }}
+{%  if user.is_authenticated %}
+<a href="{% url 'accounts:editProfile' %}"> Edit Profile </a>
+    <hr>
+<a href="{% url 'accounts:logout' %}"> logout </a>
+{% else %}
+
+<a href="{% url 'accounts:login' %}"> login </a>
+
+<a href="{% url 'accounts:register' %}"> register </a>
+{% endif %}
     <h1>This is the home page</h1>
 </body>
 
