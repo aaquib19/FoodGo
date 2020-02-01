@@ -68,7 +68,7 @@ def logout_view(request):
 # @login_required
 def home(request):
     user = request.user
-    return render(request, "home.html", {'user':user})
+    return render(request, "index.html", {'user':user})
 
 @login_required
 def edit_profile(request):

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>FoodGo</title>
+<link rel="icon" href="{% static 'img/logo.png' %}">
+
+
+    {% include 'base/css.html' %}
+
+</head>
+<body>
+
+
+
+{#<#}
+
+
+{% include 'base/navbar.html' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#/#}
+
+
+
+
+
+
+
+
+
+
+  <!-- Start your project here-->  
+  <div style="height: 100vh">
+
+
+
+
+
+
+
+      {{ user.email }}
+{%  if user.is_authenticated %}
+<a href="{% url 'accounts:editProfile' %}"> Edit Profile </a>
+    <hr>
+<a href="{% url 'accounts:logout' %}"> logout </a>
+{% else %}
+
+<a href="{% url 'accounts:login' %}"> login </a>
+    <hr>
+<a href="{% url 'accounts:register' %}"> register </a>
+{% endif %}
+
+
+
+
+
+
+
+  </div>
+  <!-- End your project here-->
+
+
+{% include 'base/js.html' %}
+</body>
+</html>
