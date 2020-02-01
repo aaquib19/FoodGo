@@ -15,40 +15,7 @@
 <body>
 
 
-
-{#<#}
-
-
 {% include 'base/navbar.html' %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{#/#}
-
-
-
-
-
 
 
 
@@ -57,30 +24,8 @@
   <!-- Start your project here-->  
   <div style="height: 100vh">
 
-
-
-
-
-
-
-      {{ user.email }}
-{%  if user.is_authenticated %}
-<a href="{% url 'accounts:editProfile' %}"> Edit Profile </a>
-    <hr>
-<a href="{% url 'accounts:logout' %}"> logout </a>
-{% else %}
-
-<a href="{% url 'accounts:login' %}"> login </a>
-    <hr>
-<a href="{% url 'accounts:register' %}"> register </a>
-{% endif %}
-
-
-
-
-
-
-
+{% block content %}
+{%  endblock %}
   </div>
   <!-- End your project here-->
 
