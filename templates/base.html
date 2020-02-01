@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>FoodGo</title>
-<link rel="icon" href="{% static 'img/logo.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>FoodGo</title>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
 
 
     {% include 'base/css.html' %}
@@ -18,16 +18,13 @@
 {% include 'base/navbar.html' %}
 
 
+<!--Main div is  here-->
+<div style="height: 100vh">
 
-
-
-  <!-- Start your project here-->  
-  <div style="height: 100vh">
-
-{% block content %}
-{%  endblock %}
-  </div>
-  <!-- End your project here-->
+    {% block content %}
+    {% endblock %}
+</div>
+<!-- end -->
 
 
 {% include 'base/js.html' %}
