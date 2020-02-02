@@ -24,3 +24,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 python manage.py runserver
 ```
+
+## Usage
+
+after running the django server just use this default admin 
+```aaquib``` and password is ```123```
+you can also create a superuser or admin by typing following command
+```
+python manage.py createsuperuser
+
+```
