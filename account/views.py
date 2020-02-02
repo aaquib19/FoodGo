@@ -59,7 +59,7 @@ def register_view(request):
     }
     return render(request, "signup.html", context)
 
-
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('/')
