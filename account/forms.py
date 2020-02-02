@@ -52,6 +52,12 @@ class UserRegisterForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserRegisterForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['placeholder'] = 'Type in your username.'
+        self.fields['email'].widget.attrs['placeholder'] = 'Type in your email.'
+        self.fields['email2'].widget.attrs['placeholder'] = 'Type in your email again.'
+        self.fields['password'].widget.attrs['placeholder'] = 'Type in a passoword.'
+
+
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
 
@@ -74,5 +80,8 @@ class UserProfileForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
+        self.fields['location'].widget.attrs['placeholder'] = 'Type in your city.'
+        self.fields['address'].widget.attrs['placeholder'] = 'Type in your address.'
+
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
