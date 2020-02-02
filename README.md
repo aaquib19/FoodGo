@@ -16,6 +16,8 @@ The main **component Division** is as follows:<br />
 
 ## Installation
 
+**This guide is for ubuntu**
+
 ```bash
 git clone https://https://github.com/aaquib19/FoodGo.git
 cd FoodGo
@@ -27,6 +29,8 @@ python manage.py migrate
 python manage.py loaddata test_db.json
 python manage.py runserver
 ```
+**in case of any problem contact me **
+my mail : aaquibniaz3600@gmail.com
 
 ## Usage
 
