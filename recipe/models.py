@@ -2,6 +2,8 @@ import os
 import random
 from django.db import models
 from django.db.models.signals import pre_save,post_save
+from django.contrib.auth.models import  User
+
 # Create your models here.
 from FoodGo.utils import unique_slug_generator
 from django.urls import reverse
@@ -29,6 +31,7 @@ class Recipe(models.Model):
     description     =       models.TextField()
     price           =       models.DecimalField(decimal_places=2,max_digits=10,default=100.00)
     image           =       models.ImageField(upload_to=upload_image_path, null=True, blank=True)
+    user            =       models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
     #change filename so that we can avoid bad filename
 
     def get_absolute_url(self):

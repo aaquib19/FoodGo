@@ -1,7 +1,10 @@
 from django.views.generic import ListView,DetailView,UpdateView
+from django.views.generic.edit import CreateView
+from django.contrib.auth.models import  User
+
 from django.shortcuts import render,get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-
+from  django.db import models
 # Create your views here.
 
 from .models import Recipe
@@ -35,6 +38,16 @@ class RecipeDetailView(DetailView):
         except:
             raise Http404("some error has occured check detail view")
         return  instance
+
+class RecipeCreateView(CreateView):
+    model = Recipe
+    fields = ['title','description','image']
+    template_name = 'recipe_add.html'
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def form_valid(self, form):
+        form.instance.user=self.request.user
+        return super().form_valid(form)
 
 
 class RecipeUpdateView(UpdateView):
