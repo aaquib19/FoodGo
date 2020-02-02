@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-     <form method="POST">
+     <form class="text-center border border-light p-5" method="POST">
+         <p class="h4 mb-4">Sign up</p>
+
         {% csrf_token %}
         {{ form.as_p }}
         {{ profile_form.as_p }}
-        <input type="submit" />
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
     </form>
 {% endblock %}
