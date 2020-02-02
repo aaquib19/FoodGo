@@ -60,7 +60,7 @@ class RecipeCreateView(LoginRequiredMixin,CreateView):
                 title=ingredient
                 # slug=ingredient,
             )
-            # print(obj)
+
             obj.recipes.add(recipe_object)
         return super().form_valid(form)
 

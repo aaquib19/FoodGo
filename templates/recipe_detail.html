@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{{ object.title }}
-<hr>
-{{ object.description }}
-{% if object.image %}
-<img src="{{ object.image.url }}" alt="" width="350px">
-{% endif %}
-{{ object.image }}
+{#{{ object.title }}#}
+{#<hr>#}
+{#{{ object.description }}#}
+{#{% if object.image %}#}
+{#<img src="{{ object.image.url }}" alt="" width="350px">#}
+{#{% endif %}#}
+{#{{ object.image }}#}
+
+{#{{ object.title }}#}
+     {% include 'recipe/detail.html' with instance=object %}
+{#    {% include 'recipe/card.html' with instance=object %}#}
+
 {% endblock %}

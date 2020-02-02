@@ -1,0 +1,42 @@
+{% load static %}
+{#  <div class="container my-5 py-5 z-depth-1">#}
+
+<!--Grid row-->
+<div class="row mt-3 wow fadeIn">
+
+    <!--Grid column-->
+    <div class="col-lg-5 col-xl-4 mb-4">
+        <!--Featured image-->
+        <div class="view overlay rounded z-depth-1">
+            {% if instance.image %}
+            <img src="{{ instance.image.url }}" class="img-fluid"
+                 alt="">
+            {% endif %}
+        </div>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+        <h3 class="mb-3 font-weight-bold dark-grey-text">
+            <strong>{{ instance.title }}</strong>
+        </h3>
+        <p class="grey-text">{{ instance.description |linebreaks|truncatewords:14 }}</p>
+        <a href="{{ instance.get_absolute_url }}" target="_blank" class="btn btn-primary btn-md">View Recipe
+            <i class="fas fa-play ml-2"></i>
+        </a>
+    </div>
+    <!--Grid column-->
+
+</div>
+<!--Grid row-->
+
+{#  </div>#}
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4 item-photo">
+            {% if instance.image %}
+                <img style="max-width:100%;" src="{{ instance.image.url }}"/>
+            {% endif %}
+        </div>
+        <div class="col-xs-5" style="width: 100%;border:0px solid gray">
+            <h3>{{ instance.title }}</h3>
+
+
+            <!-- Precios -->
+            <h6 class="title-price">
+                <smaill>{{ instance.title }}</smaill>
+            </h6>
+            <h3 style="margin-top:0px;">INR. ₹ {{ instance.price }}</h3>
+
+            <hr>
+        </div>
+
+        <div class="col-xs-9" style="width: 100%">
+            <div style="width:100%;">
+                <p style="padding:15px;">
+                <h4>Description</h4>
+                <small>
+
+                    {{ instance.description }}
+                </small>
+                </p>
+
+                <hr>
+
+                <small>
+                <h3>Ingredients Used</h3>
+                    <ul>
+                        {% for i in instance.ingredient_set.all %}
+                            {#                    {{ i.title }}#}
+                            <li>{{ i.title }}</li>
+
+                        {% endfor %}
+
+
+                    </ul>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
