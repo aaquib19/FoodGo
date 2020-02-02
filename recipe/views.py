@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.models import  User
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.http import Http404
 from  django.db import models
@@ -40,8 +41,8 @@ class RecipeDetailView(DetailView):
             raise Http404("some error has occured check detail view")
         return  instance
 
-@login_required
-class RecipeCreateView(CreateView):
+# @login_required
+class RecipeCreateView(LoginRequiredMixin,CreateView):
     model = Recipe
     fields = ['title','description','image']
     template_name = 'index.html'
@@ -63,8 +64,8 @@ class RecipeCreateView(CreateView):
             obj.recipes.add(recipe_object)
         return super().form_valid(form)
 
-@login_required
-class RecipeUpdateView(UpdateView):
+# @login_required
+class RecipeUpdateView(LoginRequiredMixin,UpdateView):
     model = Recipe
     fields = ['title','description','image']
     template_name="recipe_update.html"
