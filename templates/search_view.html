@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
 
-<body>
+{% block content %}
 
-        {% if query %}
+            {% if query %}
             <div class='col-12' >
                 Results for <b>{{ query }}</b>
                 <hr/>
@@ -22,7 +18,7 @@
                 <hr>
             </div>
             {% endif %}
-{%  for obj in object_list %}</body>
+{%  for obj in object_list %}
 {#{{ obj.title }}#}
     <hr>
     <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
@@ -47,4 +43,4 @@
                 </div>
             {% endif %}
     </div>
-</html>
+{% endblock %}

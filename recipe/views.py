@@ -3,8 +3,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.models import  User
 from django.http import HttpResponseForbidden
 
-from django.shortcuts import render,get_object_or_404
-from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.http import Http404
 from  django.db import models
 # Create your views here.
 from ingredient.models import Ingredient
@@ -12,7 +11,7 @@ from .models import Recipe
 
 class RecipeListView(ListView):
     queryset = Recipe.objects.all()
-    paginate_by = 2
+    paginate_by = 6
     template_name = 'recipe_list.html'
 
     def get_context_data(self, *args, **kwargs):

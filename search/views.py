@@ -5,7 +5,7 @@ from recipe.models import Recipe
 # Create your views here.
 class SearchRecipeView(ListView):
     queryset = Recipe.objects.all()
-    paginate_by = 2
+    paginate_by = 6
     template_name = 'search_view.html'
 
     def get_context_data(self, *args, **kwargs):
