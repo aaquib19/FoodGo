@@ -11,5 +11,13 @@ class RecipeForm(forms.ModelForm):
         # self.fields['address'].widget.attrs['placeholder'] = 'Type in your address.'
 
         for visible in self.visible_fields():
-            visible.field.widget.attrs['class'] = 'form-control'
+            if visible.__dict__.get('name')=='image':
+                print(visible.field)
+                print("hh")
+                visible.field.widget.attrs['class'] = 'myInput'
 
+            else:
+                visible.field.widget.attrs['class'] = 'form-control'
+            # print(str(visible) is '<input type="file" name="image" accept="image/*" id="id_image">')
+            print(dir(visible))
+            print(visible.__dict__.get('name'))

@@ -71,7 +71,6 @@ class RecipeUpdateView(LoginRequiredMixin,UpdateView):
     model = Recipe
     form_class = RecipeForm
 
-    # fields = ['title','description','image']
     template_name="recipe_update.html"
 
     def dispatch(self, request, *args, **kwargs):
