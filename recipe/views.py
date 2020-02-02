@@ -10,6 +10,7 @@ from  django.db import models
 # Create your views here.
 from ingredient.models import Ingredient
 from .models import Recipe
+from .forms import RecipeForm
 
 class RecipeListView(ListView):
     queryset = Recipe.objects.all()
@@ -44,7 +45,8 @@ class RecipeDetailView(DetailView):
 # @login_required
 class RecipeCreateView(LoginRequiredMixin,CreateView):
     model = Recipe
-    fields = ['title','description','image']
+    form_class = RecipeForm
+    # fields = ['title','description','image']
     template_name = 'index.html'
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -67,7 +69,9 @@ class RecipeCreateView(LoginRequiredMixin,CreateView):
 # @login_required
 class RecipeUpdateView(LoginRequiredMixin,UpdateView):
     model = Recipe
-    fields = ['title','description','image']
+    form_class = RecipeForm
+
+    # fields = ['title','description','image']
     template_name="recipe_update.html"
 
     def dispatch(self, request, *args, **kwargs):

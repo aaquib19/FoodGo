@@ -1,8 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
- <h1>Edit Profile</h1>
-    <form class="text-center border border-light p-5" method="POST">
+      <style>
+    @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+
+    #logo {
+	margin:0 auto;
+	width:200px;
+	font-family:'Lily Script One', cursive;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+    }
+
+#logo:hover {
+	color:cornflowerblue;
+}
+
+.form-control {
+  display:block;
+    border:none;
+  border-bottom:1px solid #757575;
+
+}
+
+
+
+    </style>
+
+{# <h1>Edit Profile</h1>#}
+    <form class="text-center border border-light p-5" method="POST" style="width: 70%;margin: 0 auto">
+      <h3 id="logo" style="padding: 15px;width: 100%"> Edit Your Profile </h3>
+
         {% csrf_token %}
         {{ profile_form.as_p }}
         <input type="submit" />
