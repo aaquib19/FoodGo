@@ -15,7 +15,6 @@ from .models import UserProfile
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('/')
-    # Redirect to profile
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
     if form.is_valid():
@@ -70,7 +69,7 @@ def logout_view(request):
 # @login_required
 def home(request):
     user = request.user
-    return render(request, "home.html", {'user': user})
+    return redirect('recipe:listView')
 
 
 @login_required

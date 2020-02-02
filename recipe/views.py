@@ -20,7 +20,7 @@ class RecipeListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(RecipeListView, self).get_context_data(*args, **kwargs)
-        print(context)
+        # print(context)
         return context
 
 
