@@ -50,7 +50,9 @@ class RecipeCreateView(CreateView):
         form.instance.user=self.request.user
         recipe_object = form.save()
         ingredients = self.request.POST.get('ingredients')
-        print(ingredients)
+        if(len(ingredients)==0):
+            return super().form_valid(form)
+
         for ingredient in ingredients.split(","):
             obj, created = Ingredient.objects.get_or_create(
                 title=ingredient
