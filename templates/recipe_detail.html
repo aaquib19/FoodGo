@@ -4,6 +4,11 @@
 
     {% if object.user == user %}
         <a href="{% url 'recipe:editView' slug=object.slug %}">Click here to edit this Recipe</a>
+    {% else %}
+        Recipe by {{ object.user }}
+        <br>
+        you cannot edit this recipe <br>
+        create your recipe and then edit
     {% endif %}
 
     {% include 'recipe/detail.html' with instance=object %}
