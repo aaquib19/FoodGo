@@ -10,6 +10,12 @@
 {#{{ object.image }}#}
 
 {#{{ object.title }}#}
+
+    {{ object.user  }}
+    {% if object.user == user %}
+        <a href="{% url 'recipe:editView' slug=object.slug %}">edit</a>
+    {% endif %}
+    
      {% include 'recipe/detail.html' with instance=object %}
 {#    {% include 'recipe/card.html' with instance=object %}#}
 

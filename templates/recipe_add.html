@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<form class="text-center border border-light p-5" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
     <input name="ingredients" placeholder="Write Ingriendts here with comma">
     <input type="submit" value="Add">
