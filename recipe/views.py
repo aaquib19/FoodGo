@@ -1,6 +1,7 @@
 from django.views.generic import ListView,DetailView,UpdateView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import  User
+from django.http import HttpResponseForbidden
 
 from django.shortcuts import render,get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
@@ -54,4 +55,11 @@ class RecipeUpdateView(UpdateView):
     model = Recipe
     fields = ['title','description','image']
     template_name="recipe_update.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        '''Making sure that only authors can update the recipe'''
+        obj = self.get_object()
+        if obj.user != self.request.user:
+            return HttpResponseForbidden()
+        return super(RecipeUpdateView, self).dispatch(request,*args, **kwargs)
 
