@@ -2,9 +2,106 @@
 {% load static %}
 {% block content %}
 
+    <style>
+          @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 
-    <form class="text-center border border-light p-5" method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
-<button type="submit" class="btn btn-primary">Primary</button>
-</form>
+        .tag {
+            color: white !important;
+            background-color: #5bc0de !important;
+            border-radius: .25rem;
+        }
+
+        span {
+            padding: 2px;
+        }
+
+
+        .myInput::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .myInput::before {
+            content: 'Select Image';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .myInput:hover::before {
+            border-color: black;
+        }
+
+        .myInput:active::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+        }
+
+
+
+    #logo {
+	margin:0 auto;
+	width:200px;
+	font-family:'Lily Script One', cursive;
+	font-size:60px;
+	font-weight:bold;
+	text-align:center;
+	color:lightgray;
+	-webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+    }
+
+#logo:hover {
+	color:cornflowerblue;
+}
+
+.form-control {
+  display:block;
+    border:none;
+  border-bottom:1px solid #757575;
+
+}
+
+
+
+    </style>
+
+    <div>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'tags_input/assets/bootstrap-tagsinput.css' %}">
+
+
+        <div class="example example_typeahead">
+
+            <form class="text-center border border-light p-5" method="post" enctype="multipart/form-data"
+                  style="width: 70%;margin: 0 auto">{% csrf_token %}
+                <h3 id="logo" style="padding: 15px"> Update Recipe</h3>
+                {{ form.as_p }}
+
+                <div class="bs-example">
+                Ingredients:   <input type="text" name="ingredients" value="{{ingredient}}" data-role="tagsinput" placeholder="Type Ingredients & hit space">
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
+        <script src="{% static 'tags_input/assets/jquery.min.js' %}"></script>
+
+        <script src="{% static 'tags_input/assets/tag-input.js' %}"></script>
+    </div>
+
 {% endblock %}
+

@@ -73,6 +73,34 @@ class RecipeUpdateView(LoginRequiredMixin,UpdateView):
 
     template_name="recipe_update.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(RecipeUpdateView, self).get_context_data(**kwargs)
+        print(self.request.GET)
+        slug = self.kwargs['slug']
+        obj = Recipe.objects.get(slug=slug)
+        print(obj.ingredient_set.all())
+        ing =""
+        for i in obj.ingredient_set.all():
+            ing+=i.title+','
+        print(ing)
+        context['ingredient']=ing
+        return  context
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        recipe_object = form.save()
+        ingredients = self.request.POST.get('ingredients')
+        if (len(ingredients) == 0):
+            return super().form_valid(form)
+
+        for ingredient in ingredients.split(","):
+            obj, created = Ingredient.objects.get_or_create(
+                title=ingredient
+                # slug=ingredient,
+            )
+
+            obj.recipes.add(recipe_object)
+        return super().form_valid(form)
+
     def dispatch(self, request, *args, **kwargs):
         '''Making sure that only authors can update the recipe'''
         obj = self.get_object()

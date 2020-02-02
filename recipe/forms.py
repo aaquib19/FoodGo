@@ -12,12 +12,12 @@ class RecipeForm(forms.ModelForm):
 
         for visible in self.visible_fields():
             if visible.__dict__.get('name')=='image':
-                print(visible.field)
-                print("hh")
+                # print(visible.field)
+                # print("hh")
                 visible.field.widget.attrs['class'] = 'myInput'
 
             else:
                 visible.field.widget.attrs['class'] = 'form-control'
             # print(str(visible) is '<input type="file" name="image" accept="image/*" id="id_image">')
-            print(dir(visible))
-            print(visible.__dict__.get('name'))
+            # print(dir(visible))
+            # print(visible.__dict__.get('name'))
