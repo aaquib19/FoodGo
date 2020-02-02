@@ -3,7 +3,7 @@
 {% block content %}
 
     <style>
-          @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+        @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 
         .tag {
             color: white !important;
@@ -45,33 +45,31 @@
         }
 
 
+        #logo {
+            margin: 0 auto;
+            width: 200px;
+            font-family: 'Lily Script One', cursive;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            color: lightgray;
+            -webkit-transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -ms-transition: 0.2s ease all;
+            -o-transition: 0.2s ease all;
+            transition: 0.2s ease all;
+        }
 
-    #logo {
-	margin:0 auto;
-	width:200px;
-	font-family:'Lily Script One', cursive;
-	font-size:60px;
-	font-weight:bold;
-	text-align:center;
-	color:lightgray;
-	-webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
-    }
+        #logo:hover {
+            color: cornflowerblue;
+        }
 
-#logo:hover {
-	color:cornflowerblue;
-}
+        .form-control {
+            display: block;
+            border: none;
+            border-bottom: 1px solid #757575;
 
-.form-control {
-  display:block;
-    border:none;
-  border-bottom:1px solid #757575;
-
-}
-
+        }
 
 
     </style>
@@ -89,7 +87,8 @@
                 {{ form.as_p }}
 
                 <div class="bs-example">
-                Ingredients:   <input type="text" name="ingredients" value="{{ingredient}}" data-role="tagsinput" placeholder="Type Ingredients & hit space">
+                    Ingredients: <input type="text" name="ingredients" value="{{ ingredient }}" data-role="tagsinput"
+                                        placeholder="Type Ingredients & hit space">
 
                 </div>
 

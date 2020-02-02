@@ -15,7 +15,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'recipe:createView' %}">Add Recipe</a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'recipe:listView' %}">View all Recipe</a>
             </li>
 
@@ -31,6 +31,8 @@
                     <a class="nav-link" href="{% url 'accounts:register' %}">Singup</a>
                 </li>
             {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href=""style="color:black"> Welcome {{ user.username }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'accounts:editProfile' %}">Edit Profile</a>
@@ -42,7 +44,7 @@
 
         </ul>
 
-      {% include 'search/snippets/search-form.html' %}
+        {% include 'search/snippets/search-form.html' %}
     </div>
 </nav>
 <!--/.Navbar -->

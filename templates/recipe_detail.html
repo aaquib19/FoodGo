@@ -1,22 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{#{{ object.title }}#}
-{#<hr>#}
-{#{{ object.description }}#}
-{#{% if object.image %}#}
-{#<img src="{{ object.image.url }}" alt="" width="350px">#}
-{#{% endif %}#}
-{#{{ object.image }}#}
 
-{#{{ object.title }}#}
-
-    {{ object.user  }}
     {% if object.user == user %}
-        <a href="{% url 'recipe:editView' slug=object.slug %}">edit</a>
+        <a href="{% url 'recipe:editView' slug=object.slug %}">Click here to edit this Recipe</a>
     {% endif %}
-    
-     {% include 'recipe/detail.html' with instance=object %}
-{#    {% include 'recipe/card.html' with instance=object %}#}
+
+    {% include 'recipe/detail.html' with instance=object %}
 
 {% endblock %}

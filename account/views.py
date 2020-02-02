@@ -8,8 +8,9 @@ from django.contrib.auth import (
     logout
 )
 
-from .forms import UserLoginForm, UserRegisterForm,UserProfileForm
+from .forms import UserLoginForm, UserRegisterForm, UserProfileForm
 from .models import UserProfile
+
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -43,7 +44,7 @@ def register_view(request):
         password = form.cleaned_data.get('password')
         user.set_password(password)
         user.save()
-        profile  = profile_form.save(commit=False)
+        profile = profile_form.save(commit=False)
         profile.user = user
         profile.save()
 
@@ -55,9 +56,10 @@ def register_view(request):
 
     context = {
         'form': form,
-        'profile_form':profile_form
+        'profile_form': profile_form
     }
     return render(request, "signup.html", context)
+
 
 @login_required
 def logout_view(request):
@@ -68,7 +70,8 @@ def logout_view(request):
 # @login_required
 def home(request):
     user = request.user
-    return render(request, "home.html", {'user':user})
+    return render(request, "home.html", {'user': user})
+
 
 @login_required
 def edit_profile(request):
@@ -78,7 +81,7 @@ def edit_profile(request):
             instance = UserProfile.objects.create(user=request.user)
         else:
             instance = instance.first()
-        profile_form = UserProfileForm(data = request.POST or None , instance=instance)#,files=request.FILES)
+        profile_form = UserProfileForm(data=request.POST or None, instance=instance)  # ,files=request.FILES)
         if profile_form.is_valid():
             profile_form.save()
     else:
@@ -88,8 +91,8 @@ def edit_profile(request):
         else:
             instance = instance.first()
         profile_form = UserProfileForm(instance=instance)
-    
+
     context = {
-        'profile_form':profile_form
+        'profile_form': profile_form
     }
-    return render(request, 'edit-profile.html',context)
+    return render(request, 'edit-profile.html', context)

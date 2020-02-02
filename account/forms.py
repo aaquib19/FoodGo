@@ -57,7 +57,6 @@ class UserRegisterForm(forms.ModelForm):
         self.fields['email2'].widget.attrs['placeholder'] = 'Type in your email again.'
         self.fields['password'].widget.attrs['placeholder'] = 'Type in a passoword.'
 
-
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control'
 

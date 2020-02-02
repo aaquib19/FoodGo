@@ -10,7 +10,6 @@
             <h3>{{ instance.title }}</h3>
 
 
-            <!-- Precios -->
             <h6 class="title-price">
                 <smaill>{{ instance.title }}</smaill>
             </h6>
@@ -32,7 +31,7 @@
                 <hr>
 
                 <small>
-                <h3>Ingredients Used</h3>
+                    <h3>Ingredients Used</h3>
                     <ul>
                         {% for i in instance.ingredient_set.all %}
                             {#                    {{ i.title }}#}

@@ -1,6 +1,6 @@
-<form  method="post" enctype="multipart/form-data">{% csrf_token %}
-{#    {{ form.as_p }}#}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {#    {{ form.as_p }}#}
     {{ form.recipe }}
     <input name="ingredients" placeholder="Write Ingriendts here with comma">
-<button type="submit" class="btn btn-primary">Primary</button>
+    <button type="submit" class="btn btn-primary">Primary</button>
 </form>

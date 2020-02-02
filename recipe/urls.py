@@ -1,8 +1,8 @@
-
 from django.urls import path
 
-from .views import RecipeListView,RecipeDetailView,RecipeUpdateView,RecipeCreateView
-app_name ="recipe"
+from .views import RecipeListView, RecipeDetailView, RecipeUpdateView, RecipeCreateView
+
+app_name = "recipe"
 
 urlpatterns = [
     path('', RecipeListView.as_view(), name="listView"),

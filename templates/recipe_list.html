@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block content %}
-{%  for obj in object_list %}
-{#{{ obj.title }}#}
-    <hr>
-    <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+    {% for obj in object_list %}
+        {#{{ obj.title }}#}
+        <hr>
+        <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
 
 
-{% include 'recipe/card.html' with instance=obj %}
+        {% include 'recipe/card.html' with instance=obj %}
 
-{% endfor %}
+    {% endfor %}
 
 
 
     <div class="container">
-    {% if is_paginated %}
-                <div class="pagination">
+        {% if is_paginated %}
+            <div class="pagination">
                     <span class="page-links">
                         {% if page_obj.has_previous %}
                             <a href="?page={{ page_obj.previous_page_number }}">previous</a>
@@ -28,7 +28,7 @@
                             <a href="?page={{ page_obj.next_page_number }}">next</a>
                         {% endif %}
                     </span>
-                </div>
-            {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

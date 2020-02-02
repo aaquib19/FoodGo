@@ -1,7 +1,6 @@
-
 from django.urls import path
 
-app_name ="search"
+app_name = "search"
 from .views import SearchRecipeView
 
 urlpatterns = [

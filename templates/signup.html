@@ -1,46 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-        <style>
-    @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lily+Script+One);
 
-    #logo {
-	margin:0 auto;
-	width:200px;
-	font-family:'Lily Script One', cursive;
-	font-size:60px;
-	font-weight:bold;
-	text-align:center;
-	color:lightgray;
-	-webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
-    }
+        #logo {
+            margin: 0 auto;
+            width: 200px;
+            font-family: 'Lily Script One', cursive;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            color: lightgray;
+            -webkit-transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -ms-transition: 0.2s ease all;
+            -o-transition: 0.2s ease all;
+            transition: 0.2s ease all;
+        }
 
-#logo:hover {
-	color:cornflowerblue;
-}
+        #logo:hover {
+            color: cornflowerblue;
+        }
 
-.form-control {
-  display:block;
-    border:none;
-  border-bottom:1px solid #757575;
+        .form-control {
+            display: block;
+            border: none;
+            border-bottom: 1px solid #757575;
 
-}
-
+        }
 
 
     </style>
 
-     <form class="text-center border border-light p-5" method="POST"  style="width: 70%;margin: 0 auto">
-{#         <p class="h4 mb-4">Sign up</p>#}
-  <h3 id="logo" style="margin-bottom: 14px" > Sign Up</h3>
+    <form class="text-center border border-light p-5" method="POST" style="width: 70%;margin: 0 auto">
+        {#         <p class="h4 mb-4">Sign up</p>#}
+        <h3 id="logo" style="margin-bottom: 14px"> Sign Up</h3>
 
         {% csrf_token %}
         {{ form.as_p }}
         {{ profile_form.as_p }}
-    <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
     </form>
 {% endblock %}
