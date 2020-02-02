@@ -3,6 +3,7 @@ import random
 from django.db import models
 from django.db.models.signals import pre_save,post_save
 from django.contrib.auth.models import  User
+from django.db.models import Q
 
 # Create your models here.
 from FoodGo.utils import unique_slug_generator
@@ -23,7 +24,24 @@ def upload_image_path(instance, filename):
     return "recipe/{new_filename}/{final_filename}".format(
             new_filename=new_filename,
             final_filename=final_filename
+
             )
+
+class RecipeQuerySet(models.query.QuerySet):
+
+    def search(self,query):
+        lookups =   ( Q(title__icontains=query) |
+                      Q(description__icontains=query)|
+                    Q(ingredient__title__icontains=query)
+        )
+        return self.filter(lookups).distinct()
+
+class RecipeManager(models.Manager):
+    def get_queryset(self):
+        return RecipeQuerySet(self.model,using=self._db)
+
+    def search(self,query):
+        return self.get_queryset().search(query)
 
 class Recipe(models.Model):
     title           =       models.CharField(max_length=255)
@@ -34,15 +52,19 @@ class Recipe(models.Model):
     user            =       models.ForeignKey(User, on_delete=models.CASCADE)#,null=True,blank=True)
     #change filename so that we can avoid bad filename
 
-    def get_absolute_url(self):
-        # return '/recipe/{slug}'.format(slug=self.slug)
-        return  reverse("recipe:detailView",kwargs={'slug':self.slug})
+    objects = RecipeManager()
+
 
     def __str__(self):
         return self.title
 
     def __unicode__(self):
-        return self.title #for python 2 :)
+        return self.title  # for python 2 :)
+
+    def get_absolute_url(self):
+        # return '/recipe/{slug}'.format(slug=self.slug)
+        return  reverse("recipe:detailView",kwargs={'slug':self.slug})
+
 
 
 def recipe_pre_save_receiver(sender, instance ,*args ,**kwargs ):
@@ -50,3 +72,4 @@ def recipe_pre_save_receiver(sender, instance ,*args ,**kwargs ):
         instance.slug= unique_slug_generator(instance)
 
 pre_save.connect(recipe_pre_save_receiver,sender=Recipe)
+

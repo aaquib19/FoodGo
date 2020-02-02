@@ -28,6 +28,7 @@ urlpatterns = [
     #apps urls
     path('accounts/', include('account.urls')),
     path('recipe/', include('recipe.urls')),
+    path('search/', include('search.urls')),
 
 ]
 
