@@ -1,0 +1,634 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "account",
+    "model": "userprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "recipe",
+    "model": "recipe"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "ingredient",
+    "model": "ingredient"
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 46,
+  "fields": {
+    "title": "water",
+    "slug": "water",
+    "timestamp": "2020-02-02T15:49:46.017Z",
+    "recipes": [
+      34,
+      35,
+      36
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 47,
+  "fields": {
+    "title": "rice ",
+    "slug": "rice",
+    "timestamp": "2020-02-02T15:49:46.045Z",
+    "recipes": [
+      34
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 48,
+  "fields": {
+    "title": "chicken",
+    "slug": "chicken",
+    "timestamp": "2020-02-02T15:49:46.074Z",
+    "recipes": [
+      34
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 49,
+  "fields": {
+    "title": "mutton",
+    "slug": "mutton",
+    "timestamp": "2020-02-02T15:50:15.030Z",
+    "recipes": [
+      34
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 50,
+  "fields": {
+    "title": "kulfi",
+    "slug": "kulfi",
+    "timestamp": "2020-02-02T15:51:32.787Z",
+    "recipes": [
+      35
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 51,
+  "fields": {
+    "title": "cold",
+    "slug": "cold",
+    "timestamp": "2020-02-02T15:51:32.815Z",
+    "recipes": [
+      35
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 52,
+  "fields": {
+    "title": "ice",
+    "slug": "ice",
+    "timestamp": "2020-02-02T15:51:32.861Z",
+    "recipes": [
+      35
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 53,
+  "fields": {
+    "title": "noodles",
+    "slug": "noodles",
+    "timestamp": "2020-02-02T15:52:17.671Z",
+    "recipes": [
+      36
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 54,
+  "fields": {
+    "title": "maggie",
+    "slug": "maggie",
+    "timestamp": "2020-02-02T15:52:17.705Z",
+    "recipes": [
+      36
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 55,
+  "fields": {
+    "title": "two minutes",
+    "slug": "two-minutes",
+    "timestamp": "2020-02-02T15:52:17.747Z",
+    "recipes": [
+      36
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 56,
+  "fields": {
+    "title": "two ",
+    "slug": "two",
+    "timestamp": "2020-02-02T15:52:17.793Z",
+    "recipes": [
+      36
+    ]
+  }
+},
+{
+  "model": "ingredient.ingredient",
+  "pk": 57,
+  "fields": {
+    "title": "minutes",
+    "slug": "minutes",
+    "timestamp": "2020-02-02T15:52:17.836Z",
+    "recipes": [
+      36
+    ]
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add user profile",
+    "content_type": 7,
+    "codename": "add_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change user profile",
+    "content_type": 7,
+    "codename": "change_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete user profile",
+    "content_type": 7,
+    "codename": "delete_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view user profile",
+    "content_type": 7,
+    "codename": "view_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add recipe",
+    "content_type": 8,
+    "codename": "add_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change recipe",
+    "content_type": 8,
+    "codename": "change_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete recipe",
+    "content_type": 8,
+    "codename": "delete_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view recipe",
+    "content_type": 8,
+    "codename": "view_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add ingredient",
+    "content_type": 9,
+    "codename": "add_ingredient"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change ingredient",
+    "content_type": 9,
+    "codename": "change_ingredient"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete ingredient",
+    "content_type": 9,
+    "codename": "delete_ingredient"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view ingredient",
+    "content_type": 9,
+    "codename": "view_ingredient"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$j7C88hdO1xnV$I16mZ2F5robKAGM5JjxxvYmcxTcjIJOEBw9N6TJmqgQ=",
+    "last_login": "2020-02-02T15:53:23.496Z",
+    "is_superuser": true,
+    "username": "aaquib",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-01T08:52:09.254Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$Zsgqa2M8PlLI$5xkg/J+ueQdWehimYiaxgAdt0BNQTcJIeOl3G2tLNbM=",
+    "last_login": "2020-02-02T15:59:14.349Z",
+    "is_superuser": false,
+    "username": "rohit",
+    "first_name": "",
+    "last_name": "",
+    "email": "rohit@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-02-02T15:45:14.406Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.userprofile",
+  "pk": 9,
+  "fields": {
+    "user": 1,
+    "location": "Chennai",
+    "address": "Richie Street"
+  }
+},
+{
+  "model": "account.userprofile",
+  "pk": 10,
+  "fields": {
+    "user": 11,
+    "location": "patna",
+    "address": "patna"
+  }
+},
+{
+  "model": "recipe.recipe",
+  "pk": 34,
+  "fields": {
+    "title": "Biryani",
+    "slug": "biryani",
+    "description": "Whether you\u2019re talking Arroz con Pollo, Hainanese Chicken Rice, or Oyako Donburi; chicken and rice is a classic pairing that has permeated culinary culture around the world. It makes sense that earlier in human history, this staple seed would be combined with a domesticated source of protein, but the fact that this combination has endured as a popular favorite today, speaks to its unassailable deliciousness.\r\n\r\nAlthough widely associated with Indian cuisine, Chicken Biryani is a dish that has spread across a wide swath of South Asia, reaching as far west as Iraq, and as far east as Indonesia. The vast geographical area Biryani calls home has resulted in a huge variety of preparations and ingredients.\r\n\r\nPulao (a.k.a. Pilaf), a similar rice dish can be found in the same areas. While there\u2019s some debate as to the difference between Biryani and Pulao, the latter tends to have less meat and veggies relative to the rice, which means it\u2019s usually served as a side rather than an entree. The second big difference is that Biryani is usually layered and steamed, which creates a wonderful variation in flavor, texture and color when it\u2019s all mixed together at the end.",
+    "price": "100.00",
+    "image": "recipe/3373936600/3373936600.jpeg",
+    "user": 11
+  }
+},
+{
+  "model": "recipe.recipe",
+  "pk": 35,
+  "fields": {
+    "title": "Kulfi Faluda",
+    "slug": "kulfi-faluda",
+    "description": "Whether you\u2019re talking Arroz con Pollo, Hainanese Chicken Rice, or Oyako Donburi; chicken and rice is a classic pairing that has permeated culinary culture around the world. It makes sense that earlier in human history, this staple seed would be combined with a domesticated source of protein, but the fact that this combination has endured as a popular favorite today, speaks to its unassailable deliciousness.\r\n\r\nAlthough widely associated with Indian cuisine, Chicken Biryani is a dish that has spread across a wide swath of South Asia, reaching as far west as Iraq, and as far east as Indonesia. The vast geographical area Biryani calls home has resulted in a huge variety of preparations and ingredients.\r\n\r\nPulao (a.k.a. Pilaf), a similar rice dish can be found in the same areas. While there\u2019s some debate as to the difference between Biryani and Pulao, the latter tends to have less meat and veggies relative to the rice, which means it\u2019s usually served as a side rather than an entree. The second big difference is that Biryani is usually layered and steamed, which creates a wonderful variation in flavor, texture and color when it\u2019s all mixed together at the end.",
+    "price": "100.00",
+    "image": "recipe/1219788733/1219788733.jpeg",
+    "user": 11
+  }
+},
+{
+  "model": "recipe.recipe",
+  "pk": 36,
+  "fields": {
+    "title": "Chicken Noodles",
+    "slug": "chicken-noodles",
+    "description": "Whether you\u2019re talking Arroz con Pollo, Hainanese Chicken Rice, or Oyako Donburi; chicken and rice is a classic pairing that has permeated culinary culture around the world. It makes sense that earlier in human history, this staple seed would be combined with a domesticated source of protein, but the fact that this combination has endured as a popular favorite today, speaks to its unassailable deliciousness.\r\n\r\nAlthough widely associated with Indian cuisine, Chicken Biryani is a dish that has spread across a wide swath of South Asia, reaching as far west as Iraq, and as far east as Indonesia. The vast geographical area Biryani calls home has resulted in a huge variety of preparations and ingredients.\r\n\r\nPulao (a.k.a. Pilaf), a similar rice dish can be found in the same areas. While there\u2019s some debate as to the difference between Biryani and Pulao, the latter tends to have less meat and veggies relative to the rice, which means it\u2019s usually served as a side rather than an entree. The second big difference is that Biryani is usually layered and steamed, which creates a wonderful variation in flavor, texture and color when it\u2019s all mixed together at the end.",
+    "price": "100.00",
+    "image": "recipe/2665243055/2665243055.jpeg",
+    "user": 11
+  }
+}
+]
