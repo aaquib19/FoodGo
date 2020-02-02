@@ -13,3 +13,14 @@ The main **component Division** is as follows:<br />
 **Ingrident**   :   This app handles the Ingridents which is many to many to field on Recipe.<br />
 **Search**      :   This handles the searching feature of the FoodGo Website.<br />
 
+
+## Installation
+
+```bash
+git clone https://https://github.com/aaquib19/FoodGo.git
+cd FoodGo
+virtualenv -p python3 venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+```
