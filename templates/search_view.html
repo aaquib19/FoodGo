@@ -2,26 +2,14 @@
 {% load static %}
 
 {% block content %}
-
-            {% if query %}
-            <div class='col-12' >
-                Results for <b>{{ query }}</b>
-                <hr/>
-            </div>
-            {% else %}
-
-{#            <div class='col-12 col-md-6 mx-auto py-5'>#}
-               {% include 'search/snippets/search-form.html' %}
-{##}
-{#            </div>#}
-            <div class='col-12'>
-                <hr>
-            </div>
-            {% endif %}
 {%  for obj in object_list %}
 {#{{ obj.title }}#}
     <hr>
     <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+
+
+{% include 'recipe/card.html' with instance=obj %}
+
 {% endfor %}
 
 
