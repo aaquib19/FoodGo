@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <style>
+        .tag {
+            color: white !important;
+            background-color: #5bc0de !important;
+            border-radius: .25rem;
+        }
+
+        span {
+            padding: 2px;
+        }
+
+    </style>
+
+    <div>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'tags_input/assets/bootstrap-tagsinput.css' %}">
+
+
+        <div class="example example_typeahead">
+
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+
+                <div class="bs-example">
+                    <input type="text" name="ingredients" value="html,input,tag" data-role="tagsinput">
+
+                </div>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+
+
+        <script src="{% static 'tags_input/assets/jquery.min.js' %}"></script>
+
+        <script src="{% static 'tags_input/assets/tag-input.js' %}"></script>
+    </div>
+
+{% endblock %}
+

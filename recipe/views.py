@@ -7,7 +7,7 @@ from django.shortcuts import render,get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from  django.db import models
 # Create your views here.
-
+from ingredient.models import Ingredient
 from .models import Recipe
 
 class RecipeListView(ListView):
@@ -26,7 +26,7 @@ class RecipeDetailView(DetailView):
     template_name = 'recipe_detail.html'
 
     def get_object(self, *args,**kwargs):
-        print("Fasdf")
+        # print("Fasdf")
         request = self.request
         slug = self.kwargs.get('slug')
         try:
@@ -43,11 +43,21 @@ class RecipeDetailView(DetailView):
 class RecipeCreateView(CreateView):
     model = Recipe
     fields = ['title','description','image']
-    template_name = 'recipe_add.html'
+    template_name = 'index.html'
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def form_valid(self, form):
         form.instance.user=self.request.user
+        recipe_object = form.save()
+        ingredients = self.request.POST.get('ingredients')
+        print(ingredients)
+        for ingredient in ingredients.split(","):
+            obj, created = Ingredient.objects.get_or_create(
+                title=ingredient
+                # slug=ingredient,
+            )
+            # print(obj)
+            obj.recipes.add(recipe_object)
         return super().form_valid(form)
 
 
